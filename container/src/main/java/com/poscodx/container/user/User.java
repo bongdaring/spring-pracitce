@@ -10,6 +10,7 @@ public class User {
 	private String name = "둘리";
 	private Friend friend = null;
 	private List<String> friends = null;
+	
 	public User() {
 		
 	}
