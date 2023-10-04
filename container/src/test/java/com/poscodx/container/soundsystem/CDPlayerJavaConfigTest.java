@@ -9,22 +9,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.poscodx.container.config.soundsystem.CDPlayerConfig;
+
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration("classpath:com/poscodx/container/config/soundsystem/applicationContext.xml")
-public class CDPlayerXmlConfigTest {
+@ContextConfiguration(classes = {CDPlayerConfig.class})
+public class CDPlayerJavaConfigTest {
 	
 	@Autowired
 	CDPlayer cdPlayer;
 	
 	@Test
-	public void testCDPLayerNotNull() {
+	public void testCDPlayerNotNull() {
 		assertNotNull(cdPlayer);
 	}
-	
+
 	@Test
 	public void testPlay() {
-		String stream = cdPlayer.play();
-		assertEquals("Playing 붕붕 by 김하온", stream);
+		assertEquals("Playing 붕붕 by 김하온", cdPlayer.play());
 	}
-
 }
