@@ -24,7 +24,7 @@ public class FileUploadCotroller {
 	@RequestMapping(value = "/upload", method = RequestMethod.POST)
 	public String upload(
 			@RequestParam("email") String email, 
-			@RequestParam("file")MultipartFile file,
+			@RequestParam("file") MultipartFile file,
 			Model model
 	) {
 		System.out.println("--->"+email);
