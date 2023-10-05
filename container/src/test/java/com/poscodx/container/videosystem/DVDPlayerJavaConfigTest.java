@@ -31,11 +31,24 @@ public class DVDPlayerJavaConfigTest {
 	@Qualifier("dvdPlayer02")
 	DVDPlayer dvdPlayer02;
 	
+	@Autowired
+	@Qualifier("dvdPlayer03")
+	DVDPlayer dvdPlayer03;
+	
 	@Test
 	public void testDvdPlayer01NotNull() {
 		assertNotNull(dvdPlayer01);
 	}
+
+	@Test
+	public void testDvdPlayer02NotNull() {
+		assertNotNull(dvdPlayer02);
+	}
 	
+	@Test
+	public void testDvdPlayer03NotNull() {
+		assertNotNull(dvdPlayer03);
+	}
 	@Test
 	public void testPlay() {
 		assertEquals("Playing Movie MARVEL's Avengers", dvdPlayer01.play());
